@@ -51,6 +51,19 @@ def create_streamlit_minimal_structure():
     else:
         print("utils.py already exists")
 
+    # 5. Create a notebook directory if it doesn't exist
+    os.makedirs("notebook", exist_ok=True)
+    print("Created notebook directory")
+
+    # 6. Create a ipynb file inside notebook directory
+    notebook_path = os.path.join("notebook", "api.ipynb")
+    if not os.path.exists(notebook_path):
+        with open(notebook_path, "w") as f:
+            pass
+        print(f"Created {notebook_path}")
+    else:
+        print(f"{notebook_path} already exists")
+
     print("\nMinimal Streamlit project setup completed successfully!")
 
 
